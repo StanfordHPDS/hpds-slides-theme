@@ -5,7 +5,7 @@ quarto-required: ">=1.5.0"
 contributes:
   formats:
     revealjs:
-      logo: images/su_identity_red.png
+      logo: su_identity_red.png
       theme: [custom.scss]
       preview-links: true
       chalkboard:
@@ -13,7 +13,7 @@ contributes:
         boardmarker-width: 3
         buttons: false
       title-slide-attributes:
-        data-background-image: "images/hpdslogo.png"
+        data-background-image: "hpdslogo.png"
         data-background-position: 50% 95%
         data-background-size: 150px
       # allow mathjax
