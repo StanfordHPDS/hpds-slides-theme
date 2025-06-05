@@ -1,0 +1,37 @@
+---
+title: Untitled
+format:
+  hpds-slides-revealjs: default
+author: "Author"
+date: last-modified
+---
+
+# Header level 1 are sections with maroon backgrounds
+
+## Header level 2 is maroon
+
+### Header level 3 and below are bold
+
+- bullets are styled with a maroon `>`
+- bullet 
+- bullet
+
+::: {.normal-font-face}
+- they're bold by default
+- use the `.normal-font-face` class to demphasize them
+:::
+
+## Control bullet size and animation with classes
+
+:::{.extra-large .incremental}
+- MathJax works: $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$$
+- Incremental points come in and de-emphasize themselves
+:::
+
+Use `.tiny`, `.small`, `.medium`, `.large`, `.extra-large`, and `huge` classes to control text size. Use `.incremental` to add one-by-one.
+
+## More Information
+
+You can learn more about controlling the appearance of RevealJS output here: <https://quarto.org/docs/presentations/revealjs/>
+
+
