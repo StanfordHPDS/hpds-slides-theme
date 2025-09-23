@@ -82,8 +82,7 @@ h1 {
 }
 
 // control `.incremental` items: make them 25% opacity when not current
-.reveal .slides ul li.fragment.visible:not(.current-fragment) {
-  visibility: visible;
+.reveal .slides ul li.fragment.visible:not(.current-fragment) > p {
   opacity: .25;
 }
 
