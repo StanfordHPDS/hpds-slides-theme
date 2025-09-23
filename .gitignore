@@ -6,3 +6,5 @@
 /.quarto/
 README.html
 template.html
+tests/visual_tests/*.html
+tests/visual_tests/*_files/
