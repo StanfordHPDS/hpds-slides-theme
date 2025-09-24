@@ -9,7 +9,7 @@ format:
 - Given an **objective function** $f(x): X \rightarrow \mathbb{R}$, find a solution $x \in X$ which minimizes or maximizes $f(x)$
 
   - $X$ can be single-dimensional or multidimensional
-
+  
   - $X$ may be a subset of real numbers defined by a set of equations called **constraints**
 
 - Another bullet point
