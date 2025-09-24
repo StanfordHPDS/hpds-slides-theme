@@ -82,9 +82,7 @@ h1 {
 }
 
 // control `.incremental` items: make them 25% opacity when not current
-.reveal .slides ul li.fragment.visible:not(.current-fragment) > p {
-  opacity: .25;
-}
+// Handled by JavaScript in _extension.yml to implement proper parent grouping
 
 // Let images in lists be centered
 .reveal .slides ul li img {

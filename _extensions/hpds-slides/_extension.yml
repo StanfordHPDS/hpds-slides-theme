@@ -47,5 +47,64 @@ contributes:
           Reveal.on('slidechanged', event => {
             updateLogoVisibility(event.currentSlide);
           });
+          
+          // Implement proper parent grouping for incremental bullets
+          function updateBulletOpacity() {
+            const currentSlide = Reveal.getCurrentSlide();
+            if (!currentSlide) return;
+            
+            // Reset all opacity
+            currentSlide.querySelectorAll('.fragment').forEach(f => {
+              f.style.opacity = '';
+            });
+            
+            // Find which fragment is current
+            const currentFragment = currentSlide.querySelector('.fragment.current-fragment');
+            if (!currentFragment) return;
+            
+            // Find the top-level parent of the current fragment
+            function getTopLevelParent(element) {
+              let topLevel = element;
+              let parent = element.parentElement;
+              
+              while (parent && parent !== currentSlide) {
+                if (parent.tagName === 'LI' && parent.classList.contains('fragment')) {
+                  topLevel = parent;
+                }
+                parent = parent.parentElement;
+              }
+              
+              return topLevel;
+            }
+            
+            const currentTopLevel = getTopLevelParent(currentFragment);
+            
+            // Find all top-level fragments (those without fragment parents)
+            const topLevelFragments = Array.from(currentSlide.querySelectorAll('.fragment')).filter(f => {
+              // Check if this fragment has a parent that is also a fragment
+              let parent = f.parentElement;
+              while (parent && parent !== currentSlide) {
+                if (parent.classList && parent.classList.contains('fragment')) {
+                  return false; // This is a nested fragment
+                }
+                parent = parent.parentElement;
+              }
+              return true; // This is a top-level fragment
+            });
+            
+            // Apply opacity only to top-level fragments
+            topLevelFragments.forEach(fragment => {
+              if (fragment.classList.contains('visible') && fragment !== currentTopLevel) {
+                // This top-level fragment has been shown but is not the current group
+                fragment.style.opacity = '0.25';
+              }
+            });
+          }
+          
+          // Update on fragment changes
+          Reveal.on('fragmentshown', updateBulletOpacity);
+          Reveal.on('fragmenthidden', updateBulletOpacity);
+          Reveal.on('slidechanged', updateBulletOpacity);
+          Reveal.on('ready', updateBulletOpacity);
         </script>
 
