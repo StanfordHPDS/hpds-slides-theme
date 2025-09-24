@@ -1,0 +1,14 @@
+---
+title: "Regular Incremental Bullets Test"
+format:
+  hpds-slides-revealjs: default
+---
+
+## Control bullet size and animation with classes
+
+:::{.extra-large .incremental}
+- MathJax works: $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$$
+- Incremental points come in and de-emphasize themselves
+:::
+
+Use `.tiny`, `.small`, `.medium`, `.large`, `.extra-large`, and `huge` classes to control text size. Use `.incremental` to add one-by-one.
